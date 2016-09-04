@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Additional Apps
     'blog',
+    # django-taggit to be installed
+    'taggit',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,3 +128,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# E-mail configuration
+EMAIL_HOST = 'smtp.sina.com'
+EMAIL_HOST_USER = 'chengx2000@sina.com'
+EMAIL_HOST_PASSWORD = '***********'  # ^_^ My Secret ^_^
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+
+
+
+
+
