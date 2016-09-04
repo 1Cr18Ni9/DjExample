@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load blog_tags %}
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
@@ -6,7 +7,7 @@
 	<p class="date">
 		Publish {{ post.publish }} by {{ post.author }}
 	</p>
-	{{ post.body|linebreaks }}
+	{{ post.body|markdown }}
 
 	<!-- Comment Area -->
 	{% with comments.count as total_comments %}
@@ -20,7 +21,7 @@
 				Comment {{ forloop.counter }} by {{ comment.name }} at
 				{{ comment.created }}
 			</p>
-			{{ comment.body|linebreaks }}
+			{{ comment.body|markdown }}
 		</div>
 	{% empty %}
 	<p>There are no comments yet.</p>

@@ -1,7 +1,7 @@
 #sidebar{
-	width: 300px;
-	height: 120px;
-	background-color: gray;
+	margin-top: 1em;
+	min-height: 120px;
+	background-color: rgb(200,200,200);
 }
 
 .pagination{

@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# SITE_ID for sitemap
+SITE_ID = 1
 
 # Application definition
 
@@ -41,6 +43,9 @@ INSTALLED_APPS = [
     'blog',
     # django-taggit to be installed
     'taggit',
+    # django build-in Apps
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE_CLASSES = [
