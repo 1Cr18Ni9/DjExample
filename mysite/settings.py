@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blog',
     # django-taggit to be installed
     'taggit',
+    'account',
     # django build-in Apps
     'django.contrib.sites',
     'django.contrib.sitemaps',
