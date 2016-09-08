@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/1.9/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
+# redirect URL
+from django.core.urlresolvers import reverse_lazy
 
 import os
 
@@ -33,6 +35,9 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
+    # let 'account' app ahead of 'admin',
+    # or some templates may not work.
+    'account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +48,6 @@ INSTALLED_APPS = [
     'blog',
     # django-taggit to be installed
     'taggit',
-    'account',
     # django build-in Apps
     'django.contrib.sites',
     'django.contrib.sitemaps',
@@ -138,12 +142,16 @@ STATICFILES_DIRS = [
 # E-mail configuration
 EMAIL_HOST = 'smtp.sina.com'
 EMAIL_HOST_USER = 'chengx2000@sina.com'
-EMAIL_HOST_PASSWORD = '***********'  # ^_^ My Secret ^_^
+EMAIL_HOST_PASSWORD = 'xxxxxxxxxxxx'  # ^_^ My Secret ^_^
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-
+# Account login/logout constant
+LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
+LOGIN_URL = reverse_lazy('account:login')
+LOGOUT_URL = reverse_lazy('account:logout')
 
 
 

@@ -1,13 +1,28 @@
 #header{
-	background-color: rgb(50,100,0);
+	background-color: rgb(0,100,100);
 	margin-bottom: 1em;
 	height: 60px;
 	font-size: 2em;
 	color: white;
 	padding: 0.3em;
 	padding-left: 2em;
+	border-bottom-width: 5px;
+	border-bottom-style: solid;
+	border-bottom-color: yellow;
 }
 
 .errorlist{
 	color: red;
 }
+
+.menu,
+.menu li{
+	display: inline;
+	text-decoration: none;
+}
+
+.user{
+	position: absolute;
+	right: 15%;
+}
+
