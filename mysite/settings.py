@@ -153,6 +153,14 @@ LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
 LOGIN_URL = reverse_lazy('account:login')
 LOGOUT_URL = reverse_lazy('account:logout')
 
+# Setting media root directory
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-
-
+# add other Authentication_backens
+AUTHENTICATION_BACKENDS = [
+    # The default value
+    'django.contrib.auth.backends.ModelBackend',
+    # Brand-new backend
+    'account.authentication.EmailAuthBackend',
+]

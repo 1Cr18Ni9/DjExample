@@ -48,4 +48,10 @@ urlpatterns = [
     # /account/password-reset/complete/
     url(r'^password-reset/complete/$', auth_views.password_reset_complete,
         name='password_reset_complete'),
+
+    # /account/register/  Creating an account
+    url(r'^register/$', views.register, name='register'),
+
+    # /account/edit/
+    url(r'^edit/$', views.edit, name='edit'),
 ]
